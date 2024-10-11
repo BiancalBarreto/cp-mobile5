@@ -1,4 +1,4 @@
-import { NavigationProp } from "@react-navigation/native";
+import { NavigationProp, NavigatorScreenParams } from "@react-navigation/native";
 
 type AuthStack = {
   Login: undefined;
@@ -6,21 +6,23 @@ type AuthStack = {
 };
 
 
-type AuthNavigation = NavigationProp<AuthStack>;
-
-type UnidadeStack = {
+type UnidadeStackParamList = {
   List: undefined;
   Form: undefined;
 };
 
-type MainStack = {
-  
+type RootStackParamList = {
+  HomeMain: undefined;
+  UnidadeStack: NavigatorScreenParams<UnidadeStackParamList>
+  // Aqui ficarão tambem as outras stacks ou telas para navegaçaõ
 };
 
-type HomeStack = {
-  HomeMain: undefined;
-}
+export type AuthNavigation = NavigationProp<AuthStack>;
+export type UnidadeNavigationProp = NavigationProp<UnidadeStackParamList>;
+export type RootNavigationProp = NavigationProp<RootStackParamList>;
 
-type UnidadeNavigation = NavigationProp<UnidadeStack>;
-
-export { AuthStack, AuthNavigation, UnidadeStack, UnidadeNavigation, HomeStack };
+export {
+  AuthStack,
+  UnidadeStackParamList,
+  RootStackParamList,
+};

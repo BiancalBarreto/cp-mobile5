@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { UnidadeNavigation } from "@/types";
+import { UnidadeNavigationProp } from "@/types";
 import { useNavigation } from "@react-navigation/native";
 import { ScrollView } from "react-native";
 import { IconButton, TextInput } from "react-native-paper";
@@ -19,7 +19,7 @@ const FormHeaderRight = ({ onConfirm }: FormHeaderRightProps) => {
 
 const Form = () => {
   const [unidade, setUnidade] = useState<Unidade>({} as Unidade);
-  const navigation = useNavigation<UnidadeNavigation>();
+  const navigation = useNavigation<UnidadeNavigationProp>();
 
   const { user } = useContext(AuthContext);
   const { toggleLoading, LoadingModal } = useLoading();
