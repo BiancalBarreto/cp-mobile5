@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Auth from "@/Navigation/Auth";
-import Home from "@/Navigation";
+import Home from "@/Navigation/AppNavigator";
 import { AuthContext } from "@/Context/AuthContext";
 
 const Index = () => {
